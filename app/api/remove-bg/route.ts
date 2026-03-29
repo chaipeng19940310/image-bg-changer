@@ -1,5 +1,7 @@
 export const runtime = 'edge'
 
+import { getRequestContext } from '@cloudflare/next-on-pages'
+
 export async function POST(request: Request) {
   try {
     const formData = await request.formData()
@@ -18,7 +20,9 @@ export async function POST(request: Request) {
       return Response.json({ error: '图片大小不能超过 10MB' }, { status: 400 })
     }
 
-    const apiKey = process.env.REMOVE_BG_API_KEY
+    // Cloudflare Edge runtime 通过 getRequestContext().env 读取环境变量
+    const ctx = getRequestContext()
+    const apiKey = (ctx.env as Record<string, string>).REMOVE_BG_API_KEY || process.env.REMOVE_BG_API_KEY
     if (!apiKey) {
       return Response.json({ error: '服务配置错误，请联系管理员' }, { status: 500 })
     }

@@ -1,5 +1,5 @@
 {
-  "timestamp": 1774804724195,
+  "timestamp": 1774805629468,
   "outputDir": ".vercel/output/static/_worker.js",
   "versions": {
     "@cloudflare/next-on-pages": "1.13.16"
@@ -22,11 +22,11 @@
               "version": "15.2.4"
             },
             "environment": {
-              "__NEXT_BUILD_ID": "lw1ctJFuLlgO7JWJYePq_",
-              "NEXT_SERVER_ACTIONS_ENCRYPTION_KEY": "aJhxUTdjKSMEVQac5MedwfC56oJxNAmXscf5VS4oi2k=",
-              "__NEXT_PREVIEW_MODE_ID": "2ce491e9d4dd0f48763b7980623c31ab",
-              "__NEXT_PREVIEW_MODE_ENCRYPTION_KEY": "4ea06c127902d3d7c3d32cc492a9042813c5e3d2c99345899ba23c47e4ce3333",
-              "__NEXT_PREVIEW_MODE_SIGNING_KEY": "bc919e4a0cd74c4597149811809743ee6d588a7ec68c94d848b01a9e92bfb408"
+              "__NEXT_BUILD_ID": "gJuwV8sN3s9RcsV-HNjWN",
+              "NEXT_SERVER_ACTIONS_ENCRYPTION_KEY": "p9e6QMbn7oDySJ+PI/W4DMwCRrx99DCov+pFtsCssus=",
+              "__NEXT_PREVIEW_MODE_ID": "acc21f5bc576574ce9066b8febff68d2",
+              "__NEXT_PREVIEW_MODE_ENCRYPTION_KEY": "4333960368674d7429950103755f873c68213822cac8103e4acb7637c1adc752",
+              "__NEXT_PREVIEW_MODE_SIGNING_KEY": "3d384c285fe9c46077ac27af96ea4aaec70733f206fc2bc754070e275b1a2c3d"
             }
           },
           "route": {
@@ -36,7 +36,7 @@
             ]
           },
           "outputPath": "__next-on-pages-dist__/functions/api/remove-bg.func.js",
-          "outputByteSize": 109994
+          "outputByteSize": 112436
         },
         {
           "relativePath": "/index.func",
@@ -51,11 +51,11 @@
               "version": "15.2.4"
             },
             "environment": {
-              "__NEXT_BUILD_ID": "lw1ctJFuLlgO7JWJYePq_",
-              "NEXT_SERVER_ACTIONS_ENCRYPTION_KEY": "aJhxUTdjKSMEVQac5MedwfC56oJxNAmXscf5VS4oi2k=",
-              "__NEXT_PREVIEW_MODE_ID": "2ce491e9d4dd0f48763b7980623c31ab",
-              "__NEXT_PREVIEW_MODE_ENCRYPTION_KEY": "4ea06c127902d3d7c3d32cc492a9042813c5e3d2c99345899ba23c47e4ce3333",
-              "__NEXT_PREVIEW_MODE_SIGNING_KEY": "bc919e4a0cd74c4597149811809743ee6d588a7ec68c94d848b01a9e92bfb408"
+              "__NEXT_BUILD_ID": "gJuwV8sN3s9RcsV-HNjWN",
+              "NEXT_SERVER_ACTIONS_ENCRYPTION_KEY": "p9e6QMbn7oDySJ+PI/W4DMwCRrx99DCov+pFtsCssus=",
+              "__NEXT_PREVIEW_MODE_ID": "acc21f5bc576574ce9066b8febff68d2",
+              "__NEXT_PREVIEW_MODE_ENCRYPTION_KEY": "4333960368674d7429950103755f873c68213822cac8103e4acb7637c1adc752",
+              "__NEXT_PREVIEW_MODE_SIGNING_KEY": "3d384c285fe9c46077ac27af96ea4aaec70733f206fc2bc754070e275b1a2c3d"
             }
           },
           "route": {
@@ -85,11 +85,11 @@
               "version": "15.2.4"
             },
             "environment": {
-              "__NEXT_BUILD_ID": "lw1ctJFuLlgO7JWJYePq_",
-              "NEXT_SERVER_ACTIONS_ENCRYPTION_KEY": "aJhxUTdjKSMEVQac5MedwfC56oJxNAmXscf5VS4oi2k=",
-              "__NEXT_PREVIEW_MODE_ID": "2ce491e9d4dd0f48763b7980623c31ab",
-              "__NEXT_PREVIEW_MODE_ENCRYPTION_KEY": "4ea06c127902d3d7c3d32cc492a9042813c5e3d2c99345899ba23c47e4ce3333",
-              "__NEXT_PREVIEW_MODE_SIGNING_KEY": "bc919e4a0cd74c4597149811809743ee6d588a7ec68c94d848b01a9e92bfb408"
+              "__NEXT_BUILD_ID": "gJuwV8sN3s9RcsV-HNjWN",
+              "NEXT_SERVER_ACTIONS_ENCRYPTION_KEY": "p9e6QMbn7oDySJ+PI/W4DMwCRrx99DCov+pFtsCssus=",
+              "__NEXT_PREVIEW_MODE_ID": "acc21f5bc576574ce9066b8febff68d2",
+              "__NEXT_PREVIEW_MODE_ENCRYPTION_KEY": "4333960368674d7429950103755f873c68213822cac8103e4acb7637c1adc752",
+              "__NEXT_PREVIEW_MODE_SIGNING_KEY": "3d384c285fe9c46077ac27af96ea4aaec70733f206fc2bc754070e275b1a2c3d"
             }
           },
           "route": {
@@ -111,11 +111,11 @@
               "version": "15.2.4"
             },
             "environment": {
-              "__NEXT_BUILD_ID": "lw1ctJFuLlgO7JWJYePq_",
-              "NEXT_SERVER_ACTIONS_ENCRYPTION_KEY": "aJhxUTdjKSMEVQac5MedwfC56oJxNAmXscf5VS4oi2k=",
-              "__NEXT_PREVIEW_MODE_ID": "2ce491e9d4dd0f48763b7980623c31ab",
-              "__NEXT_PREVIEW_MODE_ENCRYPTION_KEY": "4ea06c127902d3d7c3d32cc492a9042813c5e3d2c99345899ba23c47e4ce3333",
-              "__NEXT_PREVIEW_MODE_SIGNING_KEY": "bc919e4a0cd74c4597149811809743ee6d588a7ec68c94d848b01a9e92bfb408"
+              "__NEXT_BUILD_ID": "gJuwV8sN3s9RcsV-HNjWN",
+              "NEXT_SERVER_ACTIONS_ENCRYPTION_KEY": "p9e6QMbn7oDySJ+PI/W4DMwCRrx99DCov+pFtsCssus=",
+              "__NEXT_PREVIEW_MODE_ID": "acc21f5bc576574ce9066b8febff68d2",
+              "__NEXT_PREVIEW_MODE_ENCRYPTION_KEY": "4333960368674d7429950103755f873c68213822cac8103e4acb7637c1adc752",
+              "__NEXT_PREVIEW_MODE_SIGNING_KEY": "3d384c285fe9c46077ac27af96ea4aaec70733f206fc2bc754070e275b1a2c3d"
             }
           },
           "route": {
@@ -161,8 +161,8 @@
               "node_modules/next/dist/shared/lib/constants.js": "node_modules/next/dist/shared/lib/constants.js",
               "node_modules/next/dist/server/web/utils.js": "node_modules/next/dist/server/web/utils.js",
               "node_modules/next/dist/client/components/app-router-headers.js": "node_modules/next/dist/client/components/app-router-headers.js",
-              "node_modules/next/dist/server/lib/trace/tracer.js": "node_modules/next/dist/server/lib/trace/tracer.js",
               "node_modules/next/dist/server/lib/trace/constants.js": "node_modules/next/dist/server/lib/trace/constants.js",
+              "node_modules/next/dist/server/lib/trace/tracer.js": "node_modules/next/dist/server/lib/trace/tracer.js",
               "node_modules/next/dist/server/app-render/work-unit-async-storage.external.js": "node_modules/next/dist/server/app-render/work-unit-async-storage.external.js",
               "node_modules/next/dist/server/app-render/after-task-async-storage.external.js": "node_modules/next/dist/server/app-render/after-task-async-storage.external.js",
               "node_modules/next/dist/server/app-render/work-async-storage.external.js": "node_modules/next/dist/server/app-render/work-async-storage.external.js",
@@ -234,8 +234,8 @@
               "node_modules/caniuse-lite/package.json": "node_modules/caniuse-lite/package.json",
               "node_modules/next/dist/compiled/babel/core.js": "node_modules/next/dist/compiled/babel/core.js",
               "node_modules/next/dist/compiled/babel/parser.js": "node_modules/next/dist/compiled/babel/parser.js",
-              "node_modules/next/dist/compiled/babel/types.js": "node_modules/next/dist/compiled/babel/types.js",
               "node_modules/next/dist/compiled/babel/traverse.js": "node_modules/next/dist/compiled/babel/traverse.js",
+              "node_modules/next/dist/compiled/babel/types.js": "node_modules/next/dist/compiled/babel/types.js",
               "node_modules/caniuse-lite/data/agents.js": "node_modules/caniuse-lite/data/agents.js",
               "node_modules/caniuse-lite/dist/unpacker/browsers.js": "node_modules/caniuse-lite/dist/unpacker/browsers.js",
               "node_modules/caniuse-lite/dist/unpacker/browserVersions.js": "node_modules/caniuse-lite/dist/unpacker/browserVersions.js",
@@ -355,8 +355,8 @@
               "node_modules/next/dist/shared/lib/constants.js": "node_modules/next/dist/shared/lib/constants.js",
               "node_modules/next/dist/server/web/utils.js": "node_modules/next/dist/server/web/utils.js",
               "node_modules/next/dist/client/components/app-router-headers.js": "node_modules/next/dist/client/components/app-router-headers.js",
-              "node_modules/next/dist/server/lib/trace/tracer.js": "node_modules/next/dist/server/lib/trace/tracer.js",
               "node_modules/next/dist/server/lib/trace/constants.js": "node_modules/next/dist/server/lib/trace/constants.js",
+              "node_modules/next/dist/server/lib/trace/tracer.js": "node_modules/next/dist/server/lib/trace/tracer.js",
               "node_modules/next/dist/server/app-render/work-unit-async-storage.external.js": "node_modules/next/dist/server/app-render/work-unit-async-storage.external.js",
               "node_modules/next/dist/server/app-render/after-task-async-storage.external.js": "node_modules/next/dist/server/app-render/after-task-async-storage.external.js",
               "node_modules/next/dist/server/app-render/work-async-storage.external.js": "node_modules/next/dist/server/app-render/work-async-storage.external.js",
@@ -428,8 +428,8 @@
               "node_modules/caniuse-lite/package.json": "node_modules/caniuse-lite/package.json",
               "node_modules/next/dist/compiled/babel/core.js": "node_modules/next/dist/compiled/babel/core.js",
               "node_modules/next/dist/compiled/babel/parser.js": "node_modules/next/dist/compiled/babel/parser.js",
-              "node_modules/next/dist/compiled/babel/types.js": "node_modules/next/dist/compiled/babel/types.js",
               "node_modules/next/dist/compiled/babel/traverse.js": "node_modules/next/dist/compiled/babel/traverse.js",
+              "node_modules/next/dist/compiled/babel/types.js": "node_modules/next/dist/compiled/babel/types.js",
               "node_modules/caniuse-lite/data/agents.js": "node_modules/caniuse-lite/data/agents.js",
               "node_modules/caniuse-lite/dist/unpacker/browsers.js": "node_modules/caniuse-lite/dist/unpacker/browsers.js",
               "node_modules/caniuse-lite/dist/unpacker/browserVersions.js": "node_modules/caniuse-lite/dist/unpacker/browserVersions.js",
@@ -534,8 +534,8 @@
       "/_next/static/chunks/polyfills-42372ed130431b0a.js",
       "/_next/static/chunks/webpack-db0a529a99835594.js",
       "/_next/static/css/85e3b82099ad483b.css",
-      "/_next/static/lw1ctJFuLlgO7JWJYePq_/_buildManifest.js",
-      "/_next/static/lw1ctJFuLlgO7JWJYePq_/_ssgManifest.js",
+      "/_next/static/gJuwV8sN3s9RcsV-HNjWN/_buildManifest.js",
+      "/_next/static/gJuwV8sN3s9RcsV-HNjWN/_ssgManifest.js",
       "/_next/static/not-found.txt"
     ],
     "identifiers": {
@@ -866,7 +866,7 @@
         },
         "1438": {
           "consumers": 1,
-          "groupedPath": "b3037481628007daca0dc66246e7c1c0",
+          "groupedPath": "abea4d2db134f72bd196f69d28956875",
           "inlined": true,
           "byteLength": 549,
           "consumersList": [
@@ -920,16 +920,16 @@
         },
         "1803": {
           "consumers": 1,
-          "groupedPath": "b3037481628007daca0dc66246e7c1c0",
+          "groupedPath": "abea4d2db134f72bd196f69d28956875",
           "inlined": true,
-          "byteLength": 42675,
+          "byteLength": 42736,
           "consumersList": [
             "/api/remove-bg.func/index.js"
           ]
         },
         "1818": {
           "consumers": 1,
-          "groupedPath": "b3037481628007daca0dc66246e7c1c0",
+          "groupedPath": "abea4d2db134f72bd196f69d28956875",
           "inlined": true,
           "byteLength": 4184,
           "consumersList": [
@@ -947,7 +947,7 @@
         },
         "1963": {
           "consumers": 1,
-          "groupedPath": "b3037481628007daca0dc66246e7c1c0",
+          "groupedPath": "abea4d2db134f72bd196f69d28956875",
           "inlined": true,
           "byteLength": 3948,
           "consumersList": [
@@ -1131,7 +1131,7 @@
         },
         "2709": {
           "consumers": 1,
-          "groupedPath": "b3037481628007daca0dc66246e7c1c0",
+          "groupedPath": "abea4d2db134f72bd196f69d28956875",
           "inlined": true,
           "byteLength": 8698,
           "consumersList": [
@@ -1200,6 +1200,15 @@
           "byteLength": 653,
           "consumersList": [
             "/index.func/index.js"
+          ]
+        },
+        "3010": {
+          "consumers": 1,
+          "groupedPath": "abea4d2db134f72bd196f69d28956875",
+          "inlined": true,
+          "byteLength": 6,
+          "consumersList": [
+            "/api/remove-bg.func/index.js"
           ]
         },
         "3014": {
@@ -1424,7 +1433,7 @@
         },
         "4102": {
           "consumers": 1,
-          "groupedPath": "b3037481628007daca0dc66246e7c1c0",
+          "groupedPath": "abea4d2db134f72bd196f69d28956875",
           "inlined": true,
           "byteLength": 1670,
           "consumersList": [
@@ -1639,7 +1648,7 @@
         },
         "4819": {
           "consumers": 1,
-          "groupedPath": "b3037481628007daca0dc66246e7c1c0",
+          "groupedPath": "abea4d2db134f72bd196f69d28956875",
           "inlined": true,
           "byteLength": 1665,
           "consumersList": [
@@ -1740,7 +1749,7 @@
         },
         "5325": {
           "consumers": 1,
-          "groupedPath": "b3037481628007daca0dc66246e7c1c0",
+          "groupedPath": "abea4d2db134f72bd196f69d28956875",
           "inlined": true,
           "byteLength": 2396,
           "consumersList": [
@@ -1889,7 +1898,7 @@
         },
         "5565": {
           "consumers": 1,
-          "groupedPath": "b3037481628007daca0dc66246e7c1c0",
+          "groupedPath": "abea4d2db134f72bd196f69d28956875",
           "inlined": true,
           "byteLength": 1885,
           "consumersList": [
@@ -2047,7 +2056,7 @@
         },
         "6237": {
           "consumers": 1,
-          "groupedPath": "b3037481628007daca0dc66246e7c1c0",
+          "groupedPath": "abea4d2db134f72bd196f69d28956875",
           "inlined": true,
           "byteLength": 1687,
           "consumersList": [
@@ -2056,7 +2065,7 @@
         },
         "6243": {
           "consumers": 1,
-          "groupedPath": "b3037481628007daca0dc66246e7c1c0",
+          "groupedPath": "abea4d2db134f72bd196f69d28956875",
           "inlined": true,
           "byteLength": 87,
           "consumersList": [
@@ -2101,7 +2110,7 @@
         },
         "6464": {
           "consumers": 1,
-          "groupedPath": "b3037481628007daca0dc66246e7c1c0",
+          "groupedPath": "abea4d2db134f72bd196f69d28956875",
           "inlined": true,
           "byteLength": 1848,
           "consumersList": [
@@ -2119,7 +2128,7 @@
         },
         "6487": {
           "consumers": 1,
-          "groupedPath": "b3037481628007daca0dc66246e7c1c0",
+          "groupedPath": "abea4d2db134f72bd196f69d28956875",
           "inlined": true,
           "byteLength": 6,
           "consumersList": [
@@ -2138,7 +2147,7 @@
         },
         "6567": {
           "consumers": 1,
-          "groupedPath": "b3037481628007daca0dc66246e7c1c0",
+          "groupedPath": "abea4d2db134f72bd196f69d28956875",
           "inlined": true,
           "byteLength": 28,
           "consumersList": [
@@ -2225,6 +2234,15 @@
           "consumersList": [
             "/api/remove-bg.func/index.js",
             "/index.func/index.js"
+          ]
+        },
+        "6834": {
+          "consumers": 1,
+          "groupedPath": "abea4d2db134f72bd196f69d28956875",
+          "inlined": true,
+          "byteLength": 2384,
+          "consumersList": [
+            "/api/remove-bg.func/index.js"
           ]
         },
         "6850": {
@@ -2395,7 +2413,7 @@
         },
         "7530": {
           "consumers": 1,
-          "groupedPath": "b3037481628007daca0dc66246e7c1c0",
+          "groupedPath": "abea4d2db134f72bd196f69d28956875",
           "inlined": true,
           "byteLength": 268,
           "consumersList": [
@@ -2554,7 +2572,7 @@
         },
         "8062": {
           "consumers": 1,
-          "groupedPath": "b3037481628007daca0dc66246e7c1c0",
+          "groupedPath": "abea4d2db134f72bd196f69d28956875",
           "inlined": true,
           "byteLength": 383,
           "consumersList": [
@@ -2627,7 +2645,7 @@
         },
         "8335": {
           "consumers": 1,
-          "groupedPath": "b3037481628007daca0dc66246e7c1c0",
+          "groupedPath": "abea4d2db134f72bd196f69d28956875",
           "inlined": true,
           "byteLength": 6,
           "consumersList": [
@@ -2663,7 +2681,7 @@
         },
         "8622": {
           "consumers": 1,
-          "groupedPath": "b3037481628007daca0dc66246e7c1c0",
+          "groupedPath": "abea4d2db134f72bd196f69d28956875",
           "inlined": true,
           "byteLength": 5159,
           "consumersList": [
@@ -2699,7 +2717,7 @@
         },
         "8729": {
           "consumers": 1,
-          "groupedPath": "b3037481628007daca0dc66246e7c1c0",
+          "groupedPath": "abea4d2db134f72bd196f69d28956875",
           "inlined": true,
           "byteLength": 16777,
           "consumersList": [

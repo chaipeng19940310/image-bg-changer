@@ -39,7 +39,7 @@ export default function Home() {
       const res = await fetch('/api/remove-bg', { method: 'POST', body: form })
 
       if (!res.ok) {
-        const data = await res.json().catch(() => ({ error: '处理失败，请重试' }))
+        const data = await res.json().catch(() => ({ error: '处理失败，请重试' })) as { error?: string }
         throw new Error(data.error || '处理失败，请重试')
       }
 
