@@ -1,3 +1,6 @@
 /** @type {import('next').NextConfig} */
-const nextConfig = {};
-module.exports = nextConfig;
+const nextConfig = {
+  // next-on-pages 需要 edge runtime
+}
+
+export default nextConfig
