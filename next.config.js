@@ -1,6 +1,8 @@
 /** @type {import('next').NextConfig} */
 const nextConfig = {
-  // next-on-pages 需要 edge runtime
+  env: {
+    REMOVE_BG_API_KEY: process.env.REMOVE_BG_API_KEY || '',
+  },
 }
 
 export default nextConfig

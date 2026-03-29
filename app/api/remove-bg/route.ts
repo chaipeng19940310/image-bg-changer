@@ -1,6 +1,7 @@
 export const runtime = 'edge'
 
-import { getRequestContext } from '@cloudflare/next-on-pages'
+// API Key 在构建时通过环境变量注入
+const REMOVE_BG_API_KEY = process.env.REMOVE_BG_API_KEY ?? ''
 
 export async function POST(request: Request) {
   try {
@@ -20,10 +21,7 @@ export async function POST(request: Request) {
       return Response.json({ error: '图片大小不能超过 10MB' }, { status: 400 })
     }
 
-    // Cloudflare Edge runtime 通过 getRequestContext().env 读取环境变量
-    const ctx = getRequestContext()
-    const apiKey = (ctx.env as Record<string, string>).REMOVE_BG_API_KEY || process.env.REMOVE_BG_API_KEY
-    if (!apiKey) {
+    if (!REMOVE_BG_API_KEY) {
       return Response.json({ error: '服务配置错误，请联系管理员' }, { status: 500 })
     }
 
@@ -34,7 +32,7 @@ export async function POST(request: Request) {
 
     const res = await fetch('https://api.remove.bg/v1.0/removebg', {
       method: 'POST',
-      headers: { 'X-Api-Key': apiKey },
+      headers: { 'X-Api-Key': REMOVE_BG_API_KEY },
       body: removeBgForm,
     })
 
