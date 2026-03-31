@@ -1,7 +1,6 @@
-export const runtime = 'edge'
-
 import type { Metadata } from 'next'
 import './globals.css'
+import Providers from '@/components/Providers'
 
 export const metadata: Metadata = {
   title: '人像换背景 - 免费在线AI抠图换背景工具',
@@ -12,7 +11,9 @@ export const metadata: Metadata = {
 export default function RootLayout({ children }: { children: React.ReactNode }) {
   return (
     <html lang="zh-CN">
-      <body className="bg-gray-50 min-h-screen">{children}</body>
+      <body className="bg-gray-50 min-h-screen">
+        <Providers>{children}</Providers>
+      </body>
     </html>
   )
 }

@@ -4,6 +4,7 @@ import { useState, useCallback, useRef } from 'react'
 import Uploader from '@/components/Uploader'
 import BgPicker, { type BgType, type PresetBg } from '@/components/BgPicker'
 import Preview from '@/components/Preview'
+import AuthButton from '@/components/AuthButton'
 
 type Status = 'idle' | 'loading' | 'done' | 'error'
 
@@ -80,12 +81,15 @@ export default function Home() {
     <div className="min-h-screen flex flex-col bg-gray-50">
       {/* Header */}
       <header className="bg-white border-b border-gray-100 shadow-sm sticky top-0 z-10">
-        <div className="max-w-4xl mx-auto px-4 py-4 flex items-center gap-3">
-          <span className="text-2xl">✨</span>
-          <div>
-            <h1 className="text-lg font-bold text-gray-900">人像换背景</h1>
-            <p className="text-xs text-gray-400">AI 自动抠图 · 海量背景 · 免费使用</p>
+        <div className="max-w-4xl mx-auto px-4 py-4 flex items-center justify-between">
+          <div className="flex items-center gap-3">
+            <span className="text-2xl">✨</span>
+            <div>
+              <h1 className="text-lg font-bold text-gray-900">人像换背景</h1>
+              <p className="text-xs text-gray-400">AI 自动抠图 · 海量背景 · 免费使用</p>
+            </div>
           </div>
+          <AuthButton />
         </div>
       </header>
 
