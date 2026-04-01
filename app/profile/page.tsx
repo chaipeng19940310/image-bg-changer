@@ -22,6 +22,7 @@ export default function ProfilePage() {
   const [user, setUser] = useState<User | null>(null)
   const [history, setHistory] = useState<HistoryItem[]>([])
   const [stats, setStats] = useState({ total: 0, thisMonth: 0 })
+  const [quota, setQuota] = useState({ used: 0, limit: 5, plan: 'free' })
 
   useEffect(() => {
     const savedUser = localStorage.getItem('user')
@@ -44,6 +45,9 @@ export default function ProfilePage() {
         return date.getMonth() === now.getMonth() && date.getFullYear() === now.getFullYear()
       })
       setStats({ total: items.length, thisMonth: thisMonth.length })
+      
+      // 计算本月使用次数
+      setQuota({ used: thisMonth.length, limit: 5, plan: 'free' })
     }
   }, [router])
 
@@ -98,6 +102,20 @@ export default function ProfilePage() {
           <div className="bg-white rounded-2xl border border-gray-200 p-5 shadow-sm text-center">
             <div className="text-3xl font-bold text-violet-600">{stats.thisMonth}</div>
             <div className="text-sm text-gray-500 mt-1">本月处理次数</div>
+          </div>
+        </div>
+
+        {/* 额度卡片 */}
+        <div className="bg-gradient-to-r from-violet-500 to-purple-600 rounded-2xl p-6 shadow-lg mb-6 text-white">
+          <div className="flex items-center justify-between">
+            <div>
+              <p className="text-sm opacity-90 mb-1">当前套餐：免费版</p>
+              <p className="text-2xl font-bold">本月剩余 {quota.limit - quota.used} 次</p>
+              <p className="text-xs opacity-75 mt-1">已使用 {quota.used}/{quota.limit} 次</p>
+            </div>
+            <Link href="/pricing" className="bg-white text-violet-600 px-6 py-3 rounded-lg font-medium hover:bg-gray-50 transition-colors">
+              升级套餐
+            </Link>
           </div>
         </div>
 

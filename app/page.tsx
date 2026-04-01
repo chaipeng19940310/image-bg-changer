@@ -24,6 +24,27 @@ export default function Home() {
   const prevCustomBgUrl = useRef<string | null>(null)
 
   const handleUpload = useCallback(async (file: File) => {
+    // 检查额度
+    const user = localStorage.getItem('user')
+    const history = JSON.parse(localStorage.getItem('processHistory') || '[]')
+    const now = new Date()
+    const thisMonth = history.filter((item: any) => {
+      const date = new Date(item.timestamp)
+      return date.getMonth() === now.getMonth() && date.getFullYear() === now.getFullYear()
+    })
+    
+    if (!user && history.length >= 1) {
+      setError('试用次数已用完，请登录后继续使用')
+      setStatus('error')
+      return
+    }
+    
+    if (user && thisMonth.length >= 5) {
+      setError('本月免费额度已用完，请升级套餐')
+      setStatus('error')
+      return
+    }
+
     if (prevOriginalUrl.current) URL.revokeObjectURL(prevOriginalUrl.current)
     if (prevTransparentUrl.current) URL.revokeObjectURL(prevTransparentUrl.current)
 
@@ -99,7 +120,12 @@ export default function Home() {
               <p className="text-xs text-gray-400">AI 自动抠图 · 海量背景 · 免费使用</p>
             </div>
           </div>
-          <AuthButton />
+          <div className="flex items-center gap-4">
+            <a href="/pricing" className="text-sm text-gray-600 hover:text-violet-600 transition-colors">
+              💎 定价
+            </a>
+            <AuthButton />
+          </div>
         </div>
       </header>
 
@@ -112,9 +138,17 @@ export default function Home() {
             {status === 'error' && error && (
               <div className="bg-red-50 border border-red-200 rounded-xl p-4 flex items-start gap-3">
                 <span className="text-xl">⚠️</span>
-                <div>
+                <div className="flex-1">
                   <p className="text-red-700 font-medium text-sm">{error}</p>
-                  <button onClick={handleReset} className="mt-1 text-xs text-red-500 underline">重新上传</button>
+                  <div className="flex gap-2 mt-2">
+                    <button onClick={handleReset} className="text-xs text-red-500 underline">重新上传</button>
+                    {error.includes('额度') && (
+                      <a href="/pricing" className="text-xs text-violet-600 underline font-medium">升级套餐</a>
+                    )}
+                    {error.includes('登录') && (
+                      <button onClick={() => window.location.reload()} className="text-xs text-violet-600 underline font-medium">立即登录</button>
+                    )}
+                  </div>
                 </div>
               </div>
             )}
