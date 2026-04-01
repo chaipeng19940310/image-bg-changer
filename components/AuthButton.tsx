@@ -38,7 +38,9 @@ export default function AuthButton() {
     return (
       <div className="flex items-center gap-3">
         <img src={user.picture} alt={user.name} className="w-8 h-8 rounded-full" />
-        <span className="text-sm text-gray-600">👋 {user.name}</span>
+        <a href="/profile" className="text-sm text-gray-600 hover:text-violet-600 transition-colors">
+          👋 {user.name}
+        </a>
         <button onClick={logout} className="text-xs text-gray-400 hover:text-gray-600 underline">
           退出
         </button>

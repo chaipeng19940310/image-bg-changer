@@ -49,6 +49,16 @@ export default function Home() {
       prevTransparentUrl.current = tUrl
       setTransparentUrl(tUrl)
       setStatus('done')
+
+      // 保存到历史记录
+      const history = JSON.parse(localStorage.getItem('processHistory') || '[]')
+      history.unshift({
+        id: Date.now().toString(),
+        timestamp: Date.now(),
+        originalUrl: localUrl,
+        resultUrl: tUrl,
+      })
+      localStorage.setItem('processHistory', JSON.stringify(history.slice(0, 50)))
     } catch (err) {
       setError(err instanceof Error ? err.message : '处理失败，请重试')
       setStatus('error')
