@@ -1,26 +1,45 @@
 'use client'
 
-import { signIn, signOut, useSession } from 'next-auth/react'
+import { useGoogleLogin } from '@react-oauth/google'
+import { useState, useEffect } from 'react'
+
+interface User {
+  name: string
+  email: string
+  picture: string
+}
 
 export default function AuthButton() {
-  const { data: session } = useSession()
+  const [user, setUser] = useState<User | null>(null)
 
-  if (session) {
+  useEffect(() => {
+    const saved = localStorage.getItem('user')
+    if (saved) setUser(JSON.parse(saved))
+  }, [])
+
+  const login = useGoogleLogin({
+    onSuccess: async (response) => {
+      const res = await fetch('https://www.googleapis.com/oauth2/v3/userinfo', {
+        headers: { Authorization: `Bearer ${response.access_token}` },
+      })
+      const data = await res.json()
+      const userData = { name: data.name, email: data.email, picture: data.picture }
+      setUser(userData)
+      localStorage.setItem('user', JSON.stringify(userData))
+    },
+  })
+
+  const logout = () => {
+    setUser(null)
+    localStorage.removeItem('user')
+  }
+
+  if (user) {
     return (
       <div className="flex items-center gap-3">
-        {session.user?.image && (
-          // eslint-disable-next-line @next/next/no-img-element
-          <img
-            src={session.user.image}
-            alt={session.user.name || ''}
-            className="w-8 h-8 rounded-full"
-          />
-        )}
-        <span className="text-sm text-gray-600">👋 {session.user?.name}</span>
-        <button
-          onClick={() => signOut()}
-          className="text-xs text-gray-400 hover:text-gray-600 underline"
-        >
+        <img src={user.picture} alt={user.name} className="w-8 h-8 rounded-full" />
+        <span className="text-sm text-gray-600">👋 {user.name}</span>
+        <button onClick={logout} className="text-xs text-gray-400 hover:text-gray-600 underline">
           退出
         </button>
       </div>
@@ -29,7 +48,7 @@ export default function AuthButton() {
 
   return (
     <button
-      onClick={() => signIn('google')}
+      onClick={() => login()}
       className="flex items-center gap-2 px-4 py-2 bg-white border border-gray-200 rounded-lg hover:bg-gray-50 transition-colors text-sm"
     >
       <svg className="w-4 h-4" viewBox="0 0 24 24">
