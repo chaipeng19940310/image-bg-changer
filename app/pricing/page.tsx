@@ -59,7 +59,7 @@ export default function PricingPage() {
             </div>
             <div className="text-center mb-6">
               <h3 className="text-xl font-bold text-gray-900 mb-2">Basic</h3>
-              <div className="text-4xl font-bold text-violet-600 mb-1">$1.49</div>
+              <div className="text-4xl font-bold text-violet-600 mb-1">$9.9</div>
               <p className="text-sm text-gray-500">per month</p>
             </div>
             <ul className="space-y-3 mb-6">
@@ -89,7 +89,7 @@ export default function PricingPage() {
           <div className="bg-white rounded-2xl border-2 border-gray-200 p-6 shadow-sm">
             <div className="text-center mb-6">
               <h3 className="text-xl font-bold text-gray-900 mb-2">Pro</h3>
-              <div className="text-4xl font-bold text-gray-900 mb-1">$14.99</div>
+              <div className="text-4xl font-bold text-gray-900 mb-1">$99</div>
               <p className="text-sm text-gray-500">per year <span className="text-violet-600">Save 17%</span></p>
             </div>
             <ul className="space-y-3 mb-6">
