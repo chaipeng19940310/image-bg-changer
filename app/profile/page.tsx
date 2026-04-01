@@ -47,7 +47,7 @@ export default function ProfilePage() {
       setStats({ total: items.length, thisMonth: thisMonth.length })
       
       // 计算本月使用次数
-      setQuota({ used: thisMonth.length, limit: 5, plan: 'free' })
+      setQuota({ used: thisMonth.length, limit: 3, plan: 'free' })
     }
   }, [router])
 

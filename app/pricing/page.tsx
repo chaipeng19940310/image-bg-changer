@@ -36,7 +36,7 @@ export default function PricingPage() {
             <ul className="space-y-3 mb-6">
               <li className="flex items-start gap-2 text-sm">
                 <span className="text-green-500 mt-0.5">✓</span>
-                <span className="text-gray-600">每月 5 次免费额度</span>
+                <span className="text-gray-600">每月 3 次免费额度</span>
               </li>
               <li className="flex items-start gap-2 text-sm">
                 <span className="text-green-500 mt-0.5">✓</span>
@@ -122,7 +122,7 @@ export default function PricingPage() {
           <div className="space-y-6 max-w-3xl mx-auto">
             <div>
               <h4 className="font-semibold text-gray-900 mb-2">❓ 未登录用户可以使用吗？</h4>
-              <p className="text-gray-600 text-sm">可以试用 1 次，体验产品功能。登录后可获得每月 5 次免费额度。</p>
+              <p className="text-gray-600 text-sm">可以试用 1 次，体验产品功能。登录后可获得每月 3 次免费额度。</p>
             </div>
             <div>
               <h4 className="font-semibold text-gray-900 mb-2">❓ 免费额度什么时候重置？</h4>

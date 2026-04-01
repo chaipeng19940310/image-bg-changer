@@ -39,7 +39,7 @@ export default function Home() {
       return
     }
     
-    if (user && thisMonth.length >= 5) {
+    if (user && thisMonth.length >= 3) {
       setError('本月免费额度已用完，请升级套餐')
       setStatus('error')
       return
