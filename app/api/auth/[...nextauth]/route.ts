@@ -1,7 +1,7 @@
 import NextAuth from 'next-auth'
 import GoogleProvider from 'next-auth/providers/google'
 
-export const runtime = 'nodejs'
+export const runtime = 'edge'
 
 const handler = NextAuth({
   providers: [
@@ -13,6 +13,7 @@ const handler = NextAuth({
   pages: {
     signIn: '/',
   },
+  secret: process.env.NEXTAUTH_SECRET,
 })
 
 export { handler as GET, handler as POST }
