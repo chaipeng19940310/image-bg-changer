@@ -34,13 +34,13 @@ export default function Home() {
     })
     
     if (!user && history.length >= 1) {
-      setError('试用次数已用完，请登录后继续使用')
+      setError('Trial limit reached. Please sign in to continue.')
       setStatus('error')
       return
     }
     
     if (user && thisMonth.length >= 3) {
-      setError('本月免费额度已用完，请升级套餐')
+      setError('Monthly free quota used up. Please upgrade your plan.')
       setStatus('error')
       return
     }
@@ -116,13 +116,13 @@ export default function Home() {
           <div className="flex items-center gap-3">
             <span className="text-2xl">✨</span>
             <div>
-              <h1 className="text-lg font-bold text-gray-900">人像换背景</h1>
-              <p className="text-xs text-gray-400">AI 自动抠图 · 海量背景 · 免费使用</p>
+              <h1 className="text-lg font-bold text-gray-900">AI Background Remover</h1>
+              <p className="text-xs text-gray-400">AI Auto Remove · Multiple Backgrounds · Free to Use</p>
             </div>
           </div>
           <div className="flex items-center gap-4">
             <a href="/pricing" className="text-sm text-gray-600 hover:text-violet-600 transition-colors">
-              💎 定价
+              💎 Pricing
             </a>
             <AuthButton />
           </div>
@@ -141,12 +141,12 @@ export default function Home() {
                 <div className="flex-1">
                   <p className="text-red-700 font-medium text-sm">{error}</p>
                   <div className="flex gap-2 mt-2">
-                    <button onClick={handleReset} className="text-xs text-red-500 underline">重新上传</button>
-                    {error.includes('额度') && (
-                      <a href="/pricing" className="text-xs text-violet-600 underline font-medium">升级套餐</a>
+                    <button onClick={handleReset} className="text-xs text-red-500 underline">Upload Again</button>
+                    {error.includes('quota') && (
+                      <a href="/pricing" className="text-xs text-violet-600 underline font-medium">Upgrade Plan</a>
                     )}
-                    {error.includes('登录') && (
-                      <button onClick={() => window.location.reload()} className="text-xs text-violet-600 underline font-medium">立即登录</button>
+                    {error.includes('sign in') && (
+                      <button onClick={() => window.location.reload()} className="text-xs text-violet-600 underline font-medium">Sign In Now</button>
                     )}
                   </div>
                 </div>
@@ -160,8 +160,8 @@ export default function Home() {
           <div className="bg-white rounded-2xl border border-gray-200 shadow-sm flex flex-col items-center justify-center py-20 gap-5">
             <div className="w-14 h-14 border-4 border-violet-100 border-t-violet-600 rounded-full animate-spin" />
             <div className="text-center">
-              <p className="text-gray-700 font-medium">AI 正在智能抠图...</p>
-              <p className="text-gray-400 text-sm mt-1">通常需要 3-5 秒，请稍候</p>
+              <p className="text-gray-700 font-medium">AI is removing background...</p>
+              <p className="text-gray-400 text-sm mt-1">Usually takes 3-5 seconds</p>
             </div>
           </div>
         )}
@@ -171,7 +171,7 @@ export default function Home() {
           <div className="flex flex-col gap-5">
             {/* 背景选择 */}
             <div className="bg-white rounded-2xl border border-gray-200 p-5 shadow-sm">
-              <p className="text-sm font-semibold text-gray-700 mb-4">选择背景</p>
+              <p className="text-sm font-semibold text-gray-700 mb-4">Choose Background</p>
               <BgPicker
                 bgType={bgType}
                 bgColor={bgColor}
@@ -198,7 +198,7 @@ export default function Home() {
 
             <div className="text-center">
               <button onClick={handleReset} className="text-sm text-gray-400 hover:text-violet-500 transition-colors underline underline-offset-2">
-                ↩ 重新上传一张
+                ↩ Upload Another Image
               </button>
             </div>
           </div>
@@ -209,9 +209,9 @@ export default function Home() {
           <>
             <div className="grid grid-cols-1 sm:grid-cols-3 gap-4">
               {[
-                { icon: '📤', title: '上传照片', desc: '支持 JPG / PNG / WEBP，最大 10MB' },
-                { icon: '✂️', title: 'AI 自动抠图', desc: '智能识别人像，精准去除背景' },
-                { icon: '🖼️', title: '选背景下载', desc: '预设图库 / 纯色 / 自定义背景随意换' },
+                { icon: '📤', title: 'Upload Photo', desc: 'Support JPG / PNG / WEBP, max 10MB' },
+                { icon: '✂️', title: 'AI Auto Remove', desc: 'Smart detection, precise background removal' },
+                { icon: '🖼️', title: 'Choose & Download', desc: 'Preset gallery / Solid color / Custom background' },
               ].map(s => (
                 <div key={s.title} className="bg-white rounded-2xl border border-gray-100 p-5 text-center shadow-sm">
                   <div className="text-3xl mb-3">{s.icon}</div>
@@ -222,7 +222,7 @@ export default function Home() {
             </div>
 
             <div className="bg-violet-50 rounded-2xl border border-violet-100 p-5">
-              <h2 className="text-sm font-semibold text-violet-800 mb-3">🎨 背景图库预览</h2>
+              <h2 className="text-sm font-semibold text-violet-800 mb-3">🎨 Background Gallery Preview</h2>
               <div className="grid grid-cols-4 sm:grid-cols-8 gap-2">
                 {[
                   'https://images.unsplash.com/photo-1448375240586-882707db888b?w=100&q=50',
@@ -238,7 +238,7 @@ export default function Home() {
                   <img key={i} src={url} alt="" className="aspect-square rounded-xl object-cover w-full opacity-80 hover:opacity-100 transition-opacity" loading="lazy" />
                 ))}
               </div>
-              <p className="text-xs text-violet-500 mt-2">共 24 张预设背景，上传照片后可自由选择</p>
+              <p className="text-xs text-violet-500 mt-2">24 preset backgrounds available after upload</p>
             </div>
           </>
         )}
@@ -246,8 +246,8 @@ export default function Home() {
 
       <footer className="border-t border-gray-100 bg-white py-5">
         <div className="max-w-4xl mx-auto px-4 text-center text-xs text-gray-400 space-y-1">
-          <p>抠图技术由 <a href="https://www.remove.bg" target="_blank" rel="noopener noreferrer" className="underline hover:text-gray-600">Remove.bg</a> 提供 · 背景图片来自 <a href="https://unsplash.com" target="_blank" rel="noopener noreferrer" className="underline hover:text-gray-600">Unsplash</a></p>
-          <p>图片不会被上传或保存，处理完毕立即释放</p>
+          <p>Powered by <a href="https://www.remove.bg" target="_blank" rel="noopener noreferrer" className="underline hover:text-gray-600">Remove.bg</a> · Images from <a href="https://unsplash.com" target="_blank" rel="noopener noreferrer" className="underline hover:text-gray-600">Unsplash</a></p>
+          <p>Images are processed locally and not stored on servers</p>
         </div>
       </footer>
     </div>

@@ -73,10 +73,10 @@ export default function ProfilePage() {
         <div className="max-w-4xl mx-auto px-4 py-4 flex items-center justify-between">
           <Link href="/" className="flex items-center gap-3 hover:opacity-80 transition-opacity">
             <span className="text-2xl">✨</span>
-            <h1 className="text-lg font-bold text-gray-900">人像换背景</h1>
+            <h1 className="text-lg font-bold text-gray-900">AI Background Remover</h1>
           </Link>
           <button onClick={handleLogout} className="text-sm text-gray-400 hover:text-gray-600 underline">
-            退出登录
+            Sign Out
           </button>
         </div>
       </header>
@@ -97,11 +97,11 @@ export default function ProfilePage() {
         <div className="grid grid-cols-2 gap-4 mb-6">
           <div className="bg-white rounded-2xl border border-gray-200 p-5 shadow-sm text-center">
             <div className="text-3xl font-bold text-violet-600">{stats.total}</div>
-            <div className="text-sm text-gray-500 mt-1">总处理次数</div>
+            <div className="text-sm text-gray-500 mt-1">Total Processed</div>
           </div>
           <div className="bg-white rounded-2xl border border-gray-200 p-5 shadow-sm text-center">
             <div className="text-3xl font-bold text-violet-600">{stats.thisMonth}</div>
-            <div className="text-sm text-gray-500 mt-1">本月处理次数</div>
+            <div className="text-sm text-gray-500 mt-1">This Month</div>
           </div>
         </div>
 
@@ -109,12 +109,12 @@ export default function ProfilePage() {
         <div className="bg-gradient-to-r from-violet-500 to-purple-600 rounded-2xl p-6 shadow-lg mb-6 text-white">
           <div className="flex items-center justify-between">
             <div>
-              <p className="text-sm opacity-90 mb-1">当前套餐：免费版</p>
-              <p className="text-2xl font-bold">本月剩余 {quota.limit - quota.used} 次</p>
-              <p className="text-xs opacity-75 mt-1">已使用 {quota.used}/{quota.limit} 次</p>
+              <p className="text-sm opacity-90 mb-1">Current Plan: Free</p>
+              <p className="text-2xl font-bold">{quota.limit - quota.used} uses left this month</p>
+              <p className="text-xs opacity-75 mt-1">Used {quota.used}/{quota.limit}</p>
             </div>
             <Link href="/pricing" className="bg-white text-violet-600 px-6 py-3 rounded-lg font-medium hover:bg-gray-50 transition-colors">
-              升级套餐
+              Upgrade
             </Link>
           </div>
         </div>
@@ -122,10 +122,10 @@ export default function ProfilePage() {
         {/* 历史记录 */}
         <div className="bg-white rounded-2xl border border-gray-200 p-6 shadow-sm">
           <div className="flex items-center justify-between mb-4">
-            <h3 className="text-lg font-bold text-gray-900">处理历史</h3>
+            <h3 className="text-lg font-bold text-gray-900">Processing History</h3>
             {history.length > 0 && (
               <button onClick={clearHistory} className="text-sm text-red-500 hover:text-red-600 underline">
-                清空历史
+                Clear History
               </button>
             )}
           </div>
@@ -133,9 +133,9 @@ export default function ProfilePage() {
           {history.length === 0 ? (
             <div className="text-center py-12">
               <div className="text-4xl mb-3">📭</div>
-              <p className="text-gray-400">还没有处理记录</p>
+              <p className="text-gray-400">No processing history yet</p>
               <Link href="/" className="inline-block mt-4 text-sm text-violet-600 hover:text-violet-700 underline">
-                去处理图片
+                Process Images
               </Link>
             </div>
           ) : (
@@ -145,7 +145,7 @@ export default function ProfilePage() {
                   <img src={item.resultUrl} alt="" className="w-full h-full object-cover" />
                   <div className="absolute inset-0 bg-black/50 opacity-0 group-hover:opacity-100 transition-opacity flex items-center justify-center">
                     <a href={item.resultUrl} download className="text-white text-sm underline">
-                      下载
+                      Download
                     </a>
                   </div>
                   <div className="absolute bottom-0 left-0 right-0 bg-gradient-to-t from-black/60 to-transparent p-2">
