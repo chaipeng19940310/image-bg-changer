@@ -103,14 +103,14 @@ export default function Preview({ originalUrl, transparentUrl, bgType, bgColor, 
       {/* 双图对比 */}
       <div className="grid grid-cols-2 gap-4">
         <div className="flex flex-col items-center gap-2">
-          <span className="text-sm text-gray-500 font-medium">原图</span>
+          <span className="text-sm text-gray-500 font-medium">Original</span>
           <div className="rounded-2xl overflow-hidden border border-gray-200 w-full aspect-[3/4] bg-gray-100 flex items-center justify-center">
             {/* eslint-disable-next-line @next/next/no-img-element */}
-            <img src={originalUrl} alt="原图" className="object-contain w-full h-full" />
+            <img src={originalUrl} alt="Original" className="object-contain w-full h-full" />
           </div>
         </div>
         <div className="flex flex-col items-center gap-2">
-          <span className="text-sm text-gray-500 font-medium">换背景效果</span>
+          <span className="text-sm text-gray-500 font-medium">With New Background</span>
           <div className="rounded-2xl overflow-hidden border border-gray-200 w-full aspect-[3/4] bg-gray-100 flex items-center justify-center">
             <canvas ref={canvasRef} className="object-contain w-full h-full" />
           </div>
@@ -123,13 +123,13 @@ export default function Preview({ originalUrl, transparentUrl, bgType, bgColor, 
           onClick={() => download('jpg')}
           className="flex items-center gap-2 px-6 py-3 bg-violet-600 hover:bg-violet-700 active:bg-violet-800 text-white rounded-xl font-medium transition-colors shadow-sm"
         >
-          ⬇ 下载 JPG
+          ⬇ Download JPG
         </button>
         <button
           onClick={() => download('png')}
           className="flex items-center gap-2 px-6 py-3 bg-white hover:bg-gray-50 text-gray-700 rounded-xl font-medium border border-gray-300 transition-colors shadow-sm"
         >
-          ⬇ 下载透明 PNG
+          ⬇ Download Transparent PNG
         </button>
       </div>
     </div>

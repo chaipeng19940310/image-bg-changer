@@ -11,41 +11,41 @@ export interface PresetBg {
   full: string
 }
 
-export const PRESET_CATEGORIES = ['自然', '城市', '渐变', '纯色'] as const
+export const PRESET_CATEGORIES = ['Nature', 'Urban', 'Gradient', 'Solid'] as const
 export type PresetCategory = typeof PRESET_CATEGORIES[number]
 
 export const PRESETS: Record<PresetCategory, PresetBg[]> = {
-  '自然': [
-    { id: 'n1', label: '绿林', thumb: 'https://images.unsplash.com/photo-1448375240586-882707db888b?w=200&q=60', full: 'https://images.unsplash.com/photo-1448375240586-882707db888b?w=1200&q=80' },
-    { id: 'n2', label: '海边', thumb: 'https://images.unsplash.com/photo-1507525428034-b723cf961d3e?w=200&q=60', full: 'https://images.unsplash.com/photo-1507525428034-b723cf961d3e?w=1200&q=80' },
-    { id: 'n3', label: '蓝天', thumb: 'https://images.unsplash.com/photo-1517483000871-1dbf64a6e1c6?w=200&q=60', full: 'https://images.unsplash.com/photo-1517483000871-1dbf64a6e1c6?w=1200&q=80' },
-    { id: 'n4', label: '花园', thumb: 'https://images.unsplash.com/photo-1490750967868-88df5691cc5e?w=200&q=60', full: 'https://images.unsplash.com/photo-1490750967868-88df5691cc5e?w=1200&q=80' },
-    { id: 'n5', label: '山景', thumb: 'https://images.unsplash.com/photo-1506905925346-21bda4d32df4?w=200&q=60', full: 'https://images.unsplash.com/photo-1506905925346-21bda4d32df4?w=1200&q=80' },
-    { id: 'n6', label: '草地', thumb: 'https://images.unsplash.com/photo-1462275646964-a0e3386b89fa?w=200&q=60', full: 'https://images.unsplash.com/photo-1462275646964-a0e3386b89fa?w=1200&q=80' },
+  'Nature': [
+    { id: 'n1', label: 'Forest', thumb: 'https://images.unsplash.com/photo-1448375240586-882707db888b?w=200&q=60', full: 'https://images.unsplash.com/photo-1448375240586-882707db888b?w=1200&q=80' },
+    { id: 'n2', label: 'Beach', thumb: 'https://images.unsplash.com/photo-1507525428034-b723cf961d3e?w=200&q=60', full: 'https://images.unsplash.com/photo-1507525428034-b723cf961d3e?w=1200&q=80' },
+    { id: 'n3', label: 'Sky', thumb: 'https://images.unsplash.com/photo-1517483000871-1dbf64a6e1c6?w=200&q=60', full: 'https://images.unsplash.com/photo-1517483000871-1dbf64a6e1c6?w=1200&q=80' },
+    { id: 'n4', label: 'Garden', thumb: 'https://images.unsplash.com/photo-1490750967868-88df5691cc5e?w=200&q=60', full: 'https://images.unsplash.com/photo-1490750967868-88df5691cc5e?w=1200&q=80' },
+    { id: 'n5', label: 'Mountain', thumb: 'https://images.unsplash.com/photo-1506905925346-21bda4d32df4?w=200&q=60', full: 'https://images.unsplash.com/photo-1506905925346-21bda4d32df4?w=1200&q=80' },
+    { id: 'n6', label: 'Grass', thumb: 'https://images.unsplash.com/photo-1462275646964-a0e3386b89fa?w=200&q=60', full: 'https://images.unsplash.com/photo-1462275646964-a0e3386b89fa?w=1200&q=80' },
   ],
-  '城市': [
-    { id: 'c1', label: '办公室', thumb: 'https://images.unsplash.com/photo-1497366216548-37526070297c?w=200&q=60', full: 'https://images.unsplash.com/photo-1497366216548-37526070297c?w=1200&q=80' },
-    { id: 'c2', label: '咖啡馆', thumb: 'https://images.unsplash.com/photo-1501339847302-ac426a4a7cbb?w=200&q=60', full: 'https://images.unsplash.com/photo-1501339847302-ac426a4a7cbb?w=1200&q=80' },
-    { id: 'c3', label: '城市夜景', thumb: 'https://images.unsplash.com/photo-1477959858617-67f85cf4f1df?w=200&q=60', full: 'https://images.unsplash.com/photo-1477959858617-67f85cf4f1df?w=1200&q=80' },
-    { id: 'c4', label: '图书馆', thumb: 'https://images.unsplash.com/photo-1481627834876-b7833e8f5570?w=200&q=60', full: 'https://images.unsplash.com/photo-1481627834876-b7833e8f5570?w=1200&q=80' },
-    { id: 'c5', label: '街景', thumb: 'https://images.unsplash.com/photo-1480714378408-67cf0d13bc1b?w=200&q=60', full: 'https://images.unsplash.com/photo-1480714378408-67cf0d13bc1b?w=1200&q=80' },
-    { id: 'c6', label: '现代建筑', thumb: 'https://images.unsplash.com/photo-1486325212027-8081e485255e?w=200&q=60', full: 'https://images.unsplash.com/photo-1486325212027-8081e485255e?w=1200&q=80' },
+  'Urban': [
+    { id: 'c1', label: 'Office', thumb: 'https://images.unsplash.com/photo-1497366216548-37526070297c?w=200&q=60', full: 'https://images.unsplash.com/photo-1497366216548-37526070297c?w=1200&q=80' },
+    { id: 'c2', label: 'Cafe', thumb: 'https://images.unsplash.com/photo-1501339847302-ac426a4a7cbb?w=200&q=60', full: 'https://images.unsplash.com/photo-1501339847302-ac426a4a7cbb?w=1200&q=80' },
+    { id: 'c3', label: 'City Night', thumb: 'https://images.unsplash.com/photo-1477959858617-67f85cf4f1df?w=200&q=60', full: 'https://images.unsplash.com/photo-1477959858617-67f85cf4f1df?w=1200&q=80' },
+    { id: 'c4', label: 'Library', thumb: 'https://images.unsplash.com/photo-1481627834876-b7833e8f5570?w=200&q=60', full: 'https://images.unsplash.com/photo-1481627834876-b7833e8f5570?w=1200&q=80' },
+    { id: 'c5', label: 'Street', thumb: 'https://images.unsplash.com/photo-1480714378408-67cf0d13bc1b?w=200&q=60', full: 'https://images.unsplash.com/photo-1480714378408-67cf0d13bc1b?w=1200&q=80' },
+    { id: 'c6', label: 'Modern', thumb: 'https://images.unsplash.com/photo-1486325212027-8081e485255e?w=200&q=60', full: 'https://images.unsplash.com/photo-1486325212027-8081e485255e?w=1200&q=80' },
   ],
-  '渐变': [
-    { id: 'g1', label: '蓝紫渐变', thumb: 'https://images.unsplash.com/photo-1557682250-33bd709cbe85?w=200&q=60', full: 'https://images.unsplash.com/photo-1557682250-33bd709cbe85?w=1200&q=80' },
-    { id: 'g2', label: '橙红渐变', thumb: 'https://images.unsplash.com/photo-1534796636912-3b95b3ab5986?w=200&q=60', full: 'https://images.unsplash.com/photo-1534796636912-3b95b3ab5986?w=1200&q=80' },
-    { id: 'g3', label: '青绿渐变', thumb: 'https://images.unsplash.com/photo-1558618666-fcd25c85cd64?w=200&q=60', full: 'https://images.unsplash.com/photo-1558618666-fcd25c85cd64?w=1200&q=80' },
-    { id: 'g4', label: '粉紫渐变', thumb: 'https://images.unsplash.com/photo-1508739773434-c26b3d09e071?w=200&q=60', full: 'https://images.unsplash.com/photo-1508739773434-c26b3d09e071?w=1200&q=80' },
-    { id: 'g5', label: '日落渐变', thumb: 'https://images.unsplash.com/photo-1495616811223-4d98c6e9c869?w=200&q=60', full: 'https://images.unsplash.com/photo-1495616811223-4d98c6e9c869?w=1200&q=80' },
-    { id: 'g6', label: '星空', thumb: 'https://images.unsplash.com/photo-1419242902214-272b3f66ee7a?w=200&q=60', full: 'https://images.unsplash.com/photo-1419242902214-272b3f66ee7a?w=1200&q=80' },
+  'Gradient': [
+    { id: 'g1', label: 'Blue Purple', thumb: 'https://images.unsplash.com/photo-1557682250-33bd709cbe85?w=200&q=60', full: 'https://images.unsplash.com/photo-1557682250-33bd709cbe85?w=1200&q=80' },
+    { id: 'g2', label: 'Orange Red', thumb: 'https://images.unsplash.com/photo-1534796636912-3b95b3ab5986?w=200&q=60', full: 'https://images.unsplash.com/photo-1534796636912-3b95b3ab5986?w=1200&q=80' },
+    { id: 'g3', label: 'Cyan Green', thumb: 'https://images.unsplash.com/photo-1558618666-fcd25c85cd64?w=200&q=60', full: 'https://images.unsplash.com/photo-1558618666-fcd25c85cd64?w=1200&q=80' },
+    { id: 'g4', label: 'Pink Purple', thumb: 'https://images.unsplash.com/photo-1508739773434-c26b3d09e071?w=200&q=60', full: 'https://images.unsplash.com/photo-1508739773434-c26b3d09e071?w=1200&q=80' },
+    { id: 'g5', label: 'Sunset', thumb: 'https://images.unsplash.com/photo-1495616811223-4d98c6e9c869?w=200&q=60', full: 'https://images.unsplash.com/photo-1495616811223-4d98c6e9c869?w=1200&q=80' },
+    { id: 'g6', label: 'Starry', thumb: 'https://images.unsplash.com/photo-1419242902214-272b3f66ee7a?w=200&q=60', full: 'https://images.unsplash.com/photo-1419242902214-272b3f66ee7a?w=1200&q=80' },
   ],
-  '纯色': [
-    { id: 's1', label: '纯白', thumb: '', full: '' },
-    { id: 's2', label: '浅灰', thumb: '', full: '' },
-    { id: 's3', label: '深灰', thumb: '', full: '' },
-    { id: 's4', label: '米色', thumb: '', full: '' },
-    { id: 's5', label: '浅蓝', thumb: '', full: '' },
-    { id: 's6', label: '薄荷绿', thumb: '', full: '' },
+  'Solid': [
+    { id: 's1', label: 'White', thumb: '', full: '' },
+    { id: 's2', label: 'Light Gray', thumb: '', full: '' },
+    { id: 's3', label: 'Dark Gray', thumb: '', full: '' },
+    { id: 's4', label: 'Beige', thumb: '', full: '' },
+    { id: 's5', label: 'Light Blue', thumb: '', full: '' },
+    { id: 's6', label: 'Mint', thumb: '', full: '' },
   ],
 }
 
@@ -70,7 +70,7 @@ export default function BgPicker({
   onTypeChange, onColorChange, onPresetSelect, onCustomUpload,
 }: BgPickerProps) {
   const fileRef = useRef<HTMLInputElement>(null)
-  const [activeCategory, setActiveCategory] = useState<PresetCategory>('自然')
+  const [activeCategory, setActiveCategory] = useState<PresetCategory>('Nature')
 
   const handleCustomFile = (e: React.ChangeEvent<HTMLInputElement>) => {
     const file = e.target.files?.[0]
@@ -81,9 +81,9 @@ export default function BgPicker({
   }
 
   const tabs: { key: BgType; label: string }[] = [
-    { key: 'preset', label: '🖼 预设图库' },
-    { key: 'color', label: '🎨 纯色' },
-    { key: 'custom', label: '📁 自定义' },
+    { key: 'preset', label: '🖼 Preset Gallery' },
+    { key: 'color', label: '🎨 Solid Color' },
+    { key: 'custom', label: '📁 Custom' },
   ]
 
   return (
@@ -182,14 +182,14 @@ export default function BgPicker({
             className="flex items-center justify-center gap-2 w-full py-4 rounded-xl border-2 border-dashed border-gray-300 hover:border-violet-400 hover:bg-violet-50 text-gray-500 hover:text-violet-600 transition-all"
           >
             <span className="text-xl">📁</span>
-            <span className="text-sm font-medium">点击上传背景图</span>
+            <span className="text-sm font-medium">Click to upload background</span>
           </button>
           <input ref={fileRef} type="file" accept="image/*" className="hidden" onChange={handleCustomFile} />
           {customBgUrl && (
             <div className="relative aspect-video rounded-xl overflow-hidden border border-gray-200">
               {/* eslint-disable-next-line @next/next/no-img-element */}
-              <img src={customBgUrl} alt="自定义背景" className="w-full h-full object-cover" />
-              <span className="absolute top-2 right-2 bg-green-500 text-white text-xs px-2 py-0.5 rounded-full">已选择</span>
+              <img src={customBgUrl} alt="Custom background" className="w-full h-full object-cover" />
+              <span className="absolute top-2 right-2 bg-green-500 text-white text-xs px-2 py-0.5 rounded-full">Selected</span>
             </div>
           )}
         </div>
