@@ -1,0 +1,18 @@
+{
+  "runtime": "edge",
+  "name": "api/paypal/capture",
+  "deploymentTarget": "v8-worker",
+  "entrypoint": "index.js",
+  "assets": [],
+  "framework": {
+    "slug": "nextjs",
+    "version": "15.2.4"
+  },
+  "environment": {
+    "__NEXT_BUILD_ID": "a5TAZsDnpZeKjpDWXwXBD",
+    "NEXT_SERVER_ACTIONS_ENCRYPTION_KEY": "D6haebC4kot47PI7bvnNPWfukMnRr327px421jDycl4=",
+    "__NEXT_PREVIEW_MODE_ID": "aa843f328a67d13258347c9250215ae7",
+    "__NEXT_PREVIEW_MODE_ENCRYPTION_KEY": "669cb4bd12409b8294ad8dbf00690e06f3cfb45c9fbadeba6b54bcb9f82a3fa1",
+    "__NEXT_PREVIEW_MODE_SIGNING_KEY": "facd9f7b43fda121287dd5666af60e54a3977399cb7b8fd3b884ae9a31c41685"
+  }
+}

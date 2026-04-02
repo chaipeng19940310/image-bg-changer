@@ -1,3 +1,5 @@
+export const runtime = 'edge'
+
 import { NextResponse } from 'next/server'
 
 const PAYPAL_API = 'https://api-m.sandbox.paypal.com'
@@ -5,7 +7,7 @@ const CLIENT_ID = process.env.PAYPAL_CLIENT_ID || 'AYzsvMlf0e-udOsVzG22Ld8dn4KG7
 const SECRET = process.env.PAYPAL_SECRET || 'EAL_p0C8alSDTeBdjtrnVFts0LKwfwZPrflRqfvQxz4QpSWMFGjSNlp0ufqPrl2iSBMMCoyvXTMCEKAj'
 
 async function getAccessToken() {
-  const auth = Buffer.from(`${CLIENT_ID}:${SECRET}`).toString('base64')
+  const auth = btoa(`${CLIENT_ID}:${SECRET}`)
   const res = await fetch(`${PAYPAL_API}/v1/oauth2/token`, {
     method: 'POST',
     headers: {
