@@ -26,6 +26,8 @@ export default function Home() {
   const handleUpload = useCallback(async (file: File) => {
     // 检查额度
     const user = localStorage.getItem('user')
+    const subscription = localStorage.getItem('subscription')
+    const isSubscribed = subscription ? JSON.parse(subscription).status === 'active' : false
     const history = JSON.parse(localStorage.getItem('processHistory') || '[]')
     const now = new Date()
     const thisMonth = history.filter((item: any) => {
@@ -39,7 +41,7 @@ export default function Home() {
       return
     }
     
-    if (user && thisMonth.length >= 3) {
+    if (user && !isSubscribed && thisMonth.length >= 3) {
       setError('Monthly free quota used up. Please upgrade your plan.')
       setStatus('error')
       return
