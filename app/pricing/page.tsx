@@ -4,8 +4,8 @@ import Link from 'next/link'
 import { useEffect, useState, Suspense } from 'react'
 import { useSearchParams } from 'next/navigation'
 
-const BASIC_PLAN_ID = 'P-5PW743597J3879106NHHIOHY'
-const PRO_PLAN_ID = 'P-2YT648573K889483HNHHIOIA'
+const BASIC_PLAN_ID = process.env.NEXT_PUBLIC_BASIC_PLAN_ID || ''
+const PRO_PLAN_ID = process.env.NEXT_PUBLIC_PRO_PLAN_ID || ''
 
 function PricingContent() {
   const searchParams = useSearchParams()

@@ -2,9 +2,9 @@ export const runtime = 'edge'
 
 import { NextResponse } from 'next/server'
 
-const PAYPAL_API = 'https://api-m.sandbox.paypal.com'
-const CLIENT_ID = process.env.PAYPAL_CLIENT_ID || 'AYzsvMlf0e-udOsVzG22Ld8dn4KG7EifrQvZpQuSYXJq2A82pD1KnQkEdH5BU6tJ75rB3T6FmjCXLbj6'
-const SECRET = process.env.PAYPAL_SECRET || 'EAL_p0C8alSDTeBdjtrnVFts0LKwfwZPrflRqfvQxz4QpSWMFGjSNlp0ufqPrl2iSBMMCoyvXTMCEKAj'
+const PAYPAL_API = 'https://api-m.paypal.com'
+const CLIENT_ID = process.env.PAYPAL_CLIENT_ID
+const SECRET = process.env.PAYPAL_SECRET
 
 async function getAccessToken() {
   const auth = btoa(`${CLIENT_ID}:${SECRET}`)
