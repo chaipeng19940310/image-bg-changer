@@ -39,7 +39,7 @@ function PricingContent() {
       const user = localStorage.getItem('user')
       const userEmail = user ? JSON.parse(user).email : undefined
 
-      const res = await fetch('/api/paypal/create-subscription', {
+      const res = await fetch('/api/paypal/create-sub', {
         method: 'POST',
         headers: { 'Content-Type': 'application/json' },
         body: JSON.stringify({ planId, userEmail })
