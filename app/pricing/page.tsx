@@ -12,24 +12,42 @@ function PricingContent() {
   const [loading, setLoading] = useState<string | null>(null)
   const [message, setMessage] = useState<{ type: 'success' | 'error', text: string } | null>(null)
 
-  useEffect(() => {
-    if (searchParams.get('success') === '1') {
-      const subscriptionId = searchParams.get('subscription_id')
-      const planId = searchParams.get('plan_id')
-      if (subscriptionId && planId) {
-        localStorage.setItem('subscription', JSON.stringify({
-          id: subscriptionId,
-          planId,
-          status: 'active',
-          activatedAt: Date.now()
-        }))
-        setMessage({ type: 'success', text: '✅ Subscription activated successfully!' })
-      }
-    } else if (searchParams.get('cancelled') === '1') {
-      setMessage({ type: 'error', text: '❌ Payment cancelled' })
-    } else if (searchParams.get('error')) {
-      setMessage({ type: 'error', text: '❌ Payment failed, please try again' })
+  const updateSubscriptionInDB = async (subscriptionId: string, planId: string, userEmail: string) => {
+    try {
+      await fetch('/api/user/subscription', {
+        method: 'POST',
+        headers: { 'Content-Type': 'application/json' },
+        body: JSON.stringify({ 
+          id: subscriptionId, 
+          user_email: userEmail, 
+          plan_id: planId, 
+          status: 'active' 
+        })
+      })
+    } catch (error) {
+      console.error('Failed to sync subscription to DB:', error)
     }
+  }
+
+  useEffect(() => {
+    const syncSubscription = async () => {
+      if (searchParams.get('success') === '1') {
+        const subscriptionId = searchParams.get('subscription_id')
+        const planId = searchParams.get('plan_id')
+        const user = localStorage.getItem('user')
+        const userEmail = user ? JSON.parse(user).email : undefined
+        
+        if (subscriptionId && planId && userEmail) {
+          await updateSubscriptionInDB(subscriptionId, planId, userEmail)
+          setMessage({ type: 'success', text: '✅ Subscription activated and saved to database!' })
+        }
+      } else if (searchParams.get('cancelled') === '1') {
+        setMessage({ type: 'error', text: '❌ Payment cancelled' })
+      } else if (searchParams.get('error')) {
+        setMessage({ type: 'error', text: '❌ Payment failed, please try again' })
+      }
+    }
+    syncSubscription()
   }, [searchParams])
 
   const handleSubscribe = async (planId: string, planName: string) => {
