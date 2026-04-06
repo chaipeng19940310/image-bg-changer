@@ -3,9 +3,13 @@ import { NextResponse } from 'next/server'
 
 export async function POST(req: Request) {
   try {
-    // 强制硬编码测试
-    const CLIENT_ID = "AWI8R_2YUZMgPNQrIyV5oFLrJ9ThskBapLSdO_JnHdWNq3n-lCgJ6lV1G336G-n-_RL5HsV5I_lYusBA"
-    const SECRET = "ECrwdXe_ec36ziOu68HvOoct14C9h-Av-mJfPnW46DVDX5P0wFjrFHqRV1dQDAxMtN4r6zJmXc-vobS6"
+    // 从环境变量读取
+    const CLIENT_ID = process.env.PAYPAL_CLIENT_ID
+    const SECRET = process.env.PAYPAL_CLIENT_SECRET
+    
+    if (!CLIENT_ID || !SECRET) {
+        return NextResponse.json({ error: 'Missing Credentials' }, { status: 500 })
+    }
     
     const auth = btoa(`${CLIENT_ID}:${SECRET}`)
     const res = await fetch('https://api-m.paypal.com/v1/oauth2/token', {
