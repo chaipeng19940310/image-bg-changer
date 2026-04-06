@@ -3,13 +3,10 @@ import { NextResponse } from 'next/server'
 
 export async function POST(req: Request) {
   try {
-    // 强制先测试能否获取 Token
-    const CLIENT_ID = process.env.PAYPAL_CLIENT_ID
-    const SECRET = process.env.PAYPAL_SECRET
-    if (!CLIENT_ID || !SECRET) {
-      return NextResponse.json({ error: 'Missing Credentials' }, { status: 500 })
-    }
-
+    // 强制硬编码测试
+    const CLIENT_ID = "AWI8R_2YUZMgPNQrIyV5oFLrJ9ThskBapLSdO_JnHdWNq3n-lCgJ6lV1G336G-n-_RL5HsV5I_lYusBA"
+    const SECRET = "ECrwdXe_ec36ziOu68HvOoct14C9h-Av-mJfPnW46DVDX5P0wFjrFHqRV1dQDAxMtN4r6zJmXc-vobS6"
+    
     const auth = btoa(`${CLIENT_ID}:${SECRET}`)
     const res = await fetch('https://api-m.paypal.com/v1/oauth2/token', {
       method: 'POST',
@@ -21,12 +18,17 @@ export async function POST(req: Request) {
     })
 
     const tokenData = await res.json()
-    if (!tokenData.access_token) {
-      return NextResponse.json({ error: 'Token Fetch Failed', details: tokenData }, { status: 500 })
-    }
-
-    return NextResponse.json({ success: true, token: 'Got it!' })
+    return NextResponse.json({ 
+      debug_version: "2026-04-06_1703",
+      success: true, 
+      token_exists: !!tokenData.access_token, 
+      debug: tokenData 
+    })
   } catch (error: any) {
-    return NextResponse.json({ error: 'System Error', detail: error.toString() }, { status: 500 })
+    return NextResponse.json({ 
+      debug_version: "2026-04-06_1703_ERROR",
+      error: 'System Error', 
+      detail: error.toString() 
+    }, { status: 500 })
   }
 }
