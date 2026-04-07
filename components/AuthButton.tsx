@@ -14,8 +14,41 @@ export default function AuthButton() {
 
   useEffect(() => {
     const saved = localStorage.getItem('user')
-    if (saved) setUser(JSON.parse(saved))
+    if (saved) {
+      const userData = JSON.parse(saved)
+      setUser(userData)
+      // 检查订阅状态
+      fetch(`/api/user/subscription?user_email=${encodeURIComponent(userData.email)}`)
+        .then(res => res.json())
+        .then(data => {
+          if (data.subscription) {
+            localStorage.setItem('subscription', JSON.stringify({
+              status: data.subscription.status?.toLowerCase() === 'active' ? 'active' : 'inactive',
+              plan_id: data.subscription.plan_id,
+            }))
+          }
+        })
+        .catch(() => {})
+    }
   }, [])
+
+  // 登录成功后，从 D1 拉取订阅状态并同步到 localStorage
+  const syncSubscription = async (email: string) => {
+    try {
+      const res = await fetch(`/api/user/subscription?user_email=${encodeURIComponent(email)}`)
+      const data = await res.json()
+      if (data.subscription) {
+        localStorage.setItem('subscription', JSON.stringify({
+          status: data.subscription.status?.toLowerCase() === 'active' ? 'active' : 'inactive',
+          plan_id: data.subscription.plan_id,
+        }))
+      } else {
+        localStorage.setItem('subscription', JSON.stringify({ status: 'inactive' }))
+      }
+    } catch {
+      // 查询失败时保持原状，不覆盖 localStorage
+    }
+  }
 
   const login = useGoogleLogin({
     onSuccess: async (response) => {
@@ -26,12 +59,15 @@ export default function AuthButton() {
       const userData = { name: data.name, email: data.email, picture: data.picture }
       setUser(userData)
       localStorage.setItem('user', JSON.stringify(userData))
+      // 登录后立即同步订阅状态
+      await syncSubscription(data.email)
     },
   })
 
   const logout = () => {
     setUser(null)
     localStorage.removeItem('user')
+    localStorage.removeItem('subscription')
   }
 
   if (user) {
